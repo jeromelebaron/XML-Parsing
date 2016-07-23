@@ -3,7 +3,7 @@
  */
 package fr.lebaron.jerome.xml.service;
 
-import java.io.File;
+import java.io.InputStream;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -18,9 +18,7 @@ import fr.lebaron.jerome.xml.entities.Root;
 public class XMLParsing {
 
     public Personne getPersonneFromXML() throws JAXBException {
-
-        String pathFichierXML = Thread.currentThread().getContextClassLoader().getResource("personne-test.xml").getPath();
-        File fichierXML = new File(pathFichierXML);
+        InputStream fichierXML = Thread.currentThread().getContextClassLoader().getResourceAsStream("personne-test.xml");
 
         JAXBContext jaxbContext = JAXBContext.newInstance(Root.class);
         Unmarshaller jaxbUnMarshaller = jaxbContext.createUnmarshaller();

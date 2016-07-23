@@ -41,6 +41,10 @@ public class XMLParsingTest {
             List<Echeance> echeances = demande.getEcheances();
             Assert.assertNotNull(echeances);
             Assert.assertEquals(2, echeances.size());
+            Assert.assertEquals("22/09/2007", echeances.get(0).getDateEcheance());
+            Assert.assertEquals(123.45, echeances.get(0).getMontant(), 0.000001);
+            Assert.assertEquals("22/10/2007", echeances.get(1).getDateEcheance());
+            Assert.assertEquals(543.21, echeances.get(1).getMontant(), 0.000001);
         } catch (JAXBException exception) {
             exception.printStackTrace();
             Assert.fail();
