@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOT>
+	<personne>
+		<idPersonnel>123</idPersonnel>
+		<nom>LE BARON</nom>
+		<prenom>Jérome</prenom>
+		<dateDeNaissance>22/09/1986</dateDeNaissance>
+		<demande>
+			<numeroDemande>456</numeroDemande>
+			<dateDeLaDemande>22/09/2006</dateDeLaDemande>
+			<echeances>
+				<echeance>
+					<date>22/09/2007</date>
+					<montant>123.45</montant>
+				</echeance>
+				<echeance>
+					<date>22/10/2007</date>
+					<montant>543.21</montant>
+				</echeance>
+			</echeances>
+		</demande>
+	</personne>
+</ROOT>
