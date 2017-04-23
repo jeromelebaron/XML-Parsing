@@ -37,7 +37,7 @@ public class FormationControllerTest {
     
     @Test
     public void saveFormation() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/save/jer").accept(MediaType.APPLICATION_JSON))
+        mvc.perform(MockMvcRequestBuilders.get("/formation/save/jer").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().json("{\"id\":1,\"nom\":\"jer\"}"));
     }
