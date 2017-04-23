@@ -61,7 +61,21 @@ public class VisiteurTest {
         Ville villeDeux = new Ville();
         villeDeux.setCodePostal("92600");
         villeDeux.setLibelle("Asnières");
+        adresseTrois.setVille(villeDeux);
         localPersonnes.add(personneTrois);
+        
+        Personne personneQuatre = new Personne();
+        personneQuatre.setNom("CERF");
+        personneQuatre.setPrenom("David");
+        Adresse adresseQuatre = new Adresse();
+        adresseQuatre.setNumero(37);
+        adresseQuatre.setVoie("Rue gabriel crié");
+        personneQuatre.setAdresse(adresseQuatre);
+        Ville villeTrois = new Ville();
+        villeTrois.setCodePostal("92240");
+        villeTrois.setLibelle("Malakoff");
+        adresseQuatre.setVille(villeTrois);
+        localPersonnes.add(personneQuatre);
         
         int i = 0;
         int y = 0;
@@ -71,7 +85,10 @@ public class VisiteurTest {
                     localPersonnes.get(y), resultat);
             i++;
         }
-        Assert.assertEquals(3, resultat.getNbDifference());
+        Assert.assertEquals(8, resultat.getNbDifference());
+        for (String changement : resultat.getChangements()) {
+            System.out.println(changement);
+        }
     }
 
 }

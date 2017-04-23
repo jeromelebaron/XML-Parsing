@@ -75,4 +75,13 @@ public class Ville implements Comparer<Ville>, Accepteur<Ville> {
         visiteur.visit(this, paramElementAComparer, paramCompteur);
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return "Ville [codePostal=" + codePostal + ", libelle=" + libelle + "]";
+    }
+
+    
 }

@@ -3,6 +3,9 @@
  */
 package fr.lebaron.jerome.arcania.visiteur.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Jerome
  *
@@ -10,6 +13,8 @@ package fr.lebaron.jerome.arcania.visiteur.impl;
 public class ArgumentVisiteur {
 
     private int nbDifference = 0;
+    
+    private List<String> changements = new ArrayList<>();
     
     /**
      * 
@@ -30,6 +35,21 @@ public class ArgumentVisiteur {
     public void setNbDifference(int paramNbDifference) {
         nbDifference = paramNbDifference;
     }
+
+    /**
+     * @return the changements
+     */
+    public List<String> getChangements() {
+        return changements;
+    }
+
+    /**
+     * @param paramChangements the changements to set
+     */
+    public void setChangements(List<String> paramChangements) {
+        changements = paramChangements;
+    }
     
+
     
 }

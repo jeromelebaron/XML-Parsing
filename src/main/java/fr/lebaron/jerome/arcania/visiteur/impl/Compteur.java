@@ -26,9 +26,13 @@ public class Compteur implements VisiteurPersonne, VisiteurAdresse, VisiteurVill
         System.out.println("Visite personne");
         if (!paramPersonneUn.getPrenom().equals(paramPersonneDeux.getPrenom())) {
             paramCompteur.setNbDifference(paramCompteur.getNbDifference() + 1);
+            paramCompteur.getChangements().add("Changement de prénom : "
+                    + paramPersonneUn.getPrenom() + " -> " + paramPersonneDeux.getPrenom());
         }
         if (!paramPersonneUn.getNom().equals(paramPersonneDeux.getNom())) {
             paramCompteur.setNbDifference(paramCompteur.getNbDifference() + 1);
+            paramCompteur.getChangements().add("Changement de nom : "
+                    + paramPersonneUn.getNom() + " -> " + paramPersonneDeux.getNom());
         }
         paramPersonneUn.getAdresse().accepter(this, paramPersonneDeux.getAdresse(),
                 paramCompteur);
@@ -45,9 +49,13 @@ public class Compteur implements VisiteurPersonne, VisiteurAdresse, VisiteurVill
         System.out.println("Visite adresse");
         if (paramAdresseUn.getNumero() != paramAdresseDeux.getNumero()) {
             paramCompteur.setNbDifference(paramCompteur.getNbDifference() + 1);
+            paramCompteur.getChangements().add("Changement de numéro : "
+                    + paramAdresseUn.getNumero() + " -> " + paramAdresseDeux.getNumero());
         }
         if (!paramAdresseUn.getVoie().equals(paramAdresseDeux.getVoie())) {
             paramCompteur.setNbDifference(paramCompteur.getNbDifference() + 1);
+            paramCompteur.getChangements().add("Changement de voie : "
+                    + paramAdresseUn.getVoie() + " -> " + paramAdresseDeux.getVoie());
         }
         paramAdresseUn.getVille().accepter(this, paramAdresseDeux.getVille(),
                 paramCompteur);
@@ -64,6 +72,8 @@ public class Compteur implements VisiteurPersonne, VisiteurAdresse, VisiteurVill
         System.out.println("Visite ville");
         if (!paramVilleUn.equals(paramVilleDeux)) {
             paramCompteur.setNbDifference(paramCompteur.getNbDifference() + 1);
+            paramCompteur.getChangements().add(
+                    "Changement de ville : " + paramVilleUn + " -> " + paramVilleDeux);
         }
     }
 
